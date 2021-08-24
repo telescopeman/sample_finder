@@ -1,6 +1,7 @@
 import musicbrainzngs
 
-DISPLAY_LATER_SAMPLES = False
+# 'Backsamples' means when the artist gets sampled by someone else. Off by default.
+DISPLAY_BACKSAMPLES = False
 
 
 def select_artist():
@@ -49,7 +50,7 @@ def search_for_samples(recording_batch):
                         print(
                             my_recording['title'] + " samples " + sampled_audio['title'] + " by " + sampled_artist[
                                 'name'])
-                    elif DISPLAY_LATER_SAMPLES:  # direction == 'backward'
+                    elif DISPLAY_BACKSAMPLES:  # direction == 'backward'
                         # Artist is *being* sampled.
                         print(my_recording['title'] + " is sampled by " + sampled_audio['title'] + " by " +
                               sampled_artist['name'])
